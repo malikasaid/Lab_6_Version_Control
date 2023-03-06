@@ -1,5 +1,14 @@
 # Joe Kan   3/6/2023   Partner: Malika Saidmuradova   Group: 40
 
+def print_menu():
+	# Print the menu
+	print("Menu")
+	print("-------------")
+	print("1. Encode")
+	print("2. Decode")
+	print("3. Quit")
+	print()
+
 def encode(code):
 	# Takes in a string of numbers and changes them by adding 3 to each
 	code_list = list(code)
@@ -18,12 +27,7 @@ def encode(code):
 if __name__ == "__main__":
 	while True:
 		# Print the menu
-		print("Menu")
-		print("-------------")
-		print("1. Encode")
-		print("2. Decode")
-		print("3. Quit")
-		print()
+		print_menu()
 
 		# Get user selection
 		user_selection = int(input("Please enter an option: "))
