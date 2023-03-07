@@ -24,6 +24,29 @@ def encode(code):
 			code_string += str(int(code_list[i]) + 3)
 	return code_string
 
+# Malika Saidmuradova
+def decode(code):
+	# Convert string to list of characters
+    code_list = list(code)
+    password =""
+    for i in range(len(code_list)):
+        if code_list[i] == "0":
+            password += "7"
+        elif code_list[i] == "1":
+            password += "8"
+        elif code_list[i] == "2":
+            password += "9"
+        elif code_list[i] == "4":
+            password += "1"
+        elif code_list[i] == "5":
+            password += "2"
+        elif code_list[i] == "6":
+            password += "3"
+        elif int(code_list[i]) >= 7 and int(code_list[i]) <= 9:
+            password += str(int(code_list[i]) - 3)
+        else:
+            password += str(int(code_list[i]) + 3)
+    return password
 if __name__ == "__main__":
 	while True:
 		# Print the menu
@@ -40,7 +63,11 @@ if __name__ == "__main__":
 		elif user_selection == 2:
 			# Decode password
 			# Partner's code goes here
+			password = input("Please enter your password to decode: ")
+			decoded_password = decode(password)
+			print("Your password has been decoded: " + decoded_password)
 			print()
+
 		elif user_selection == 3:
 			break
 		else:
